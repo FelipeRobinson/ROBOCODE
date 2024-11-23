@@ -15,7 +15,7 @@ public class ÍRIS extends AdvancedRobot {
     @Override
     public void run() {
         // Configurações do robô
-        setColors(Color.BLACK, Color.RED, Color.YELLOW);
+        setColors(Color.BLACK, Color.RED, Color.ORANGE);
         setAdjustGunForRobotTurn(true);
         setAdjustRadarForGunTurn(true);
 
