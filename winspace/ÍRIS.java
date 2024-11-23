@@ -26,6 +26,19 @@ public class ÍRIS extends AdvancedRobot {
         }
     }
 
+    public class Utils {
+        // Método para normalizar um ângulo relativo entre -π e +π
+        public static double normalRelativeAngle(double angle) {
+            while (angle > Math.PI) {
+                angle -= 2 * Math.PI;
+            }
+            while (angle < -Math.PI) {
+                angle += 2 * Math.PI;
+            }
+            return angle;
+        }
+    }
+
     @Override
     public void onScannedRobot(ScannedRobotEvent e) {
         // Rastrear inimigo e calcular posição futura
