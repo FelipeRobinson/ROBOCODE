@@ -1,4 +1,5 @@
 package winspace;
+
 import robocode.*;
 import java.awt.*;
 import java.awt.Color;
