@@ -2,7 +2,6 @@ package winspace;
 
 import robocode.*;
 import java.awt.*;
-import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
@@ -69,7 +68,7 @@ public class ÍRIS extends AdvancedRobot {
 
     @Override
     public void onHitByBullet(HitByBulletEvent e) {
-        // Movimenta rapido para desviar depois de ser atingido
+        // Movimenta rápido para desviar depois de ser atingido
         setTurnRight(90 - e.getBearing());
         setAhead(100 * moveDirection);
     }
@@ -103,7 +102,7 @@ public class ÍRIS extends AdvancedRobot {
             }
         }
 
-        // Movimentar meu robot para o lugar mais seguro
+        // Movimentar meu robô para o lugar mais seguro
         setTurnRight(bestAngle);
         setAhead(100 * moveDirection);
     }
@@ -112,7 +111,7 @@ public class ÍRIS extends AdvancedRobot {
         return x < 18 || y < 18 || x > getBattleFieldWidth() - 18 || y > getBattleFieldHeight() - 18;
     }
 
-    // Classe Wave que eu criei para representar as balas inimigas
+    // Classe Wave que eu criei para para representar as balas inimigas
     private static class Wave {
         private final double startX, startY, bulletSpeed;
         private final long creationTime;
