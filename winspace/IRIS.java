@@ -1,11 +1,12 @@
 package winspace;
 
 import robocode.*;
+import robocode.Robot;
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
-public class ÍRIS extends AdvancedRobot {
+public class IRIS extends AdvancedRobot {
 
     private double enemyEnergy = 100;
     private double moveDirection = 1;
@@ -128,18 +129,20 @@ public class ÍRIS extends AdvancedRobot {
     private static class Wave {
         private final double startX, startY, bulletSpeed;
         private final long creationTime;
-
+    
+        // Construtor da classe Wave
         public Wave(Robot robot, double x, double y, double bulletPower) {
             this.startX = x;
             this.startY = y;
             this.bulletSpeed = 20 - 3 * bulletPower;
-            this.creationTime = robot.getTime();
+            this.creationTime = System.currentTimeMillis();
         }
-
+    
+        // Método para calcular a distância da onda em um ponto X, Y
         public double getDistance(double x, double y) {
-            double timeElapsed = System.currentTimeMillis() - creationTime;
-            double waveRadius = bulletSpeed * timeElapsed;
-
+            long timeElapsed = System.currentTimeMillis() - creationTime;
+            double waveRadius = bulletSpeed * timeElapsed / 1000.0;
+    
             return Math.abs(Point2D.distance(startX, startY, x, y) - waveRadius);
         }
     }
